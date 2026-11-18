@@ -1,13 +1,14 @@
 package lucyday;
 
-/** Producto derivado para cuidado capilar; comparte los datos comunes de Producto. */
+/** Producto capilar especializado; hereda las operaciones comunes de Producto. */
 public class ProductoCapilar extends Producto {
     private final String tipoCabello;
     private final String beneficio;
 
-    public ProductoCapilar(String codigo, String nombre, double costo, double precio, int existencia,
-                           int stockMinimo, String tipoCabello, String beneficio) {
-        super(codigo, nombre, costo, precio, existencia, stockMinimo); // Reutiliza el constructor de la clase base.
+    public ProductoCapilar(String codigo, String nombre, double costo, double precio,
+                           int existencia, int stockMinimo, String tipoCabello,
+                           String beneficio) {
+        super(codigo, nombre, costo, precio, existencia, stockMinimo);
         this.tipoCabello = tipoCabello;
         this.beneficio = beneficio;
     }
@@ -15,14 +16,16 @@ public class ProductoCapilar extends Producto {
     public String getTipoCabello() { return tipoCabello; }
     public String getBeneficio() { return beneficio; }
 
-    /** Método exclusivo: muestra el beneficio y el tipo de cabello atendido. */
+    /** Método exclusivo que explica el beneficio para el tipo de cabello. */
     public String mostrarBeneficio() {
         return beneficio + " para cabello " + tipoCabello + ".";
     }
 
-    /** Sobrescribe toString para agregar los atributos propios del producto capilar. */
+    @Override public String getCategoria() { return "CAPILAR"; }
+
+    /** Sobrescribe el detalle abstracto con los atributos propios del cuidado capilar. */
     @Override
-    public String toString() {
-        return super.toString() + " | Capilar: cabello " + tipoCabello + ", beneficio " + beneficio;
+    protected String detalleEspecifico() {
+        return "Cabello: " + tipoCabello + ", beneficio: " + beneficio;
     }
 }

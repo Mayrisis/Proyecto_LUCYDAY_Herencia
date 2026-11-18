@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180"><rect width="100%" height="100%" fill="#F4F7F8"/>
+<text x="70" y="62" font-family="Arial,sans-serif" font-size="30" fill="#19314E" font-weight="bold" text-anchor="start">DIAGRAMA DE CLASES · SISTEMA LUCYDAY</text>
+<rect x="55" y="100" width="760" height="260" rx="12" fill="#FFFFFF" stroke="#148184" stroke-width="3"/>
+<rect x="55" y="100" width="760" height="53" rx="12" fill="#148184"/>
+<text x="435" y="137" font-family="Arial,sans-serif" font-size="27" fill="#FFFFFF" font-weight="bold" text-anchor="middle">&lt;&lt;interface&gt;&gt; ProductoInventariable</text>
+<text x="85" y="190" font-family="Arial,sans-serif" font-size="22" fill="#263746" font-weight="normal" text-anchor="start">+ getCodigo() : String</text>
+<text x="85" y="230" font-family="Arial,sans-serif" font-size="22" fill="#263746" font-weight="normal" text-anchor="start">+ generarDescripcion() : String</text>
+<text x="85" y="270" font-family="Arial,sans-serif" font-size="22" fill="#263746" font-weight="normal" text-anchor="start">+ registrarEntrada(cantidad) : boolean</text>
+<text x="85" y="310" font-family="Arial,sans-serif" font-size="21" fill="#263746" font-weight="normal" text-anchor="start">+ vender(cantidad) : boolean  ·  calcularImporte(cantidad) : double</text>
+<rect x="985" y="100" width="760" height="260" rx="12" fill="#FFFFFF" stroke="#19314E" stroke-width="3"/>
+<rect x="985" y="100" width="760" height="53" rx="12" fill="#19314E"/>
+<text x="1365" y="137" font-family="Arial,sans-serif" font-size="27" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Inventario</text>
+<text x="1020" y="205" font-family="Arial,sans-serif" font-size="23" fill="#263746" font-weight="normal" text-anchor="start">- productos : List&lt;ProductoInventariable&gt;</text>
+<text x="1020" y="250" font-family="Arial,sans-serif" font-size="22" fill="#263746" font-weight="normal" text-anchor="start">+ agregarProducto(producto) : boolean</text>
+<text x="1020" y="295" font-family="Arial,sans-serif" font-size="21" fill="#263746" font-weight="normal" text-anchor="start">+ listarProductos() : void  ·  + mostrarStockBajo() : void</text>
+<line x1="815" y1="230" x2="985" y2="230" stroke="#148184" stroke-width="4" />
+<text x="900" y="213" font-family="Arial,sans-serif" font-size="18" fill="#148184" font-weight="bold" text-anchor="middle">administra</text>
+<rect x="435" y="430" width="930" height="280" rx="12" fill="#FFFFFF" stroke="#19314E" stroke-width="3"/>
+<rect x="435" y="430" width="930" height="55" rx="12" fill="#19314E"/>
+<text x="900" y="468" font-family="Arial,sans-serif" font-size="29" fill="#FFFFFF" font-weight="bold" text-anchor="middle">&lt;&lt;abstract&gt;&gt; Producto</text>
+<text x="480" y="530" font-family="Arial,sans-serif" font-size="23" fill="#263746" font-weight="normal" text-anchor="start">- codigo, nombre, costo, precio, existencia, stockMinimo</text>
+<text x="480" y="575" font-family="Arial,sans-serif" font-size="22" fill="#263746" font-weight="normal" text-anchor="start">+ registrarEntrada()  ·  + vender()  ·  + necesitaReabastecimiento()</text>
+<text x="480" y="620" font-family="Arial,sans-serif" font-size="22" fill="#263746" font-weight="normal" text-anchor="start">+ generarDescripcion()  ·  + calcularImporte()</text>
+<text x="480" y="665" font-family="Arial,sans-serif" font-size="22" fill="#148184" font-weight="bold" text-anchor="start"># getCategoria() : String  ·  # detalleEspecifico() : String {abstract}</text>
+<line x1="520" y1="430" x2="435" y2="385" stroke="#148184" stroke-width="4" stroke-dasharray="10,8" />
+<polygon points="435,360 420,386 450,386" fill="#F4F7F8" stroke="#148184" stroke-width="4"/>
+<text x="380" y="397" font-family="Arial,sans-serif" font-size="17" fill="#148184" font-weight="bold" text-anchor="start">implements</text>
+<line x1="900" y1="710" x2="900" y2="760" stroke="#148184" stroke-width="4" />
+<line x1="300" y1="760" x2="1500" y2="760" stroke="#148184" stroke-width="4" />
+<line x1="300" y1="760" x2="300" y2="810" stroke="#148184" stroke-width="4" />
+<line x1="900" y1="760" x2="900" y2="810" stroke="#148184" stroke-width="4" />
+<line x1="1500" y1="760" x2="1500" y2="810" stroke="#148184" stroke-width="4" />
+<polygon points="900,700 882,730 918,730" fill="#F4F7F8" stroke="#19314E" stroke-width="4"/>
+<rect x="55" y="810" width="490" height="300" rx="12" fill="#FFFFFF" stroke="#148184" stroke-width="3"/>
+<rect x="55" y="810" width="490" height="54" rx="12" fill="#148184"/>
+<text x="300" y="847" font-family="Arial,sans-serif" font-size="25" fill="#FFFFFF" font-weight="bold" text-anchor="middle">ProductoFacial</text>
+<text x="85" y="925" font-family="Arial,sans-serif" font-size="21" fill="#263746" font-weight="normal" text-anchor="start">- tipoPiel, ingredienteActivo</text>
+<text x="85" y="970" font-family="Arial,sans-serif" font-size="21" fill="#148184" font-weight="bold" text-anchor="start">+ recomendarProducto()</text>
+<text x="85" y="1035" font-family="Arial,sans-serif" font-size="19" fill="#596B79" font-weight="normal" text-anchor="start">override getCategoria()</text>
+<rect x="655" y="810" width="490" height="300" rx="12" fill="#FFFFFF" stroke="#148184" stroke-width="3"/>
+<rect x="655" y="810" width="490" height="54" rx="12" fill="#148184"/>
+<text x="900" y="847" font-family="Arial,sans-serif" font-size="25" fill="#FFFFFF" font-weight="bold" text-anchor="middle">ProductoCapilar</text>
+<text x="685" y="925" font-family="Arial,sans-serif" font-size="21" fill="#263746" font-weight="normal" text-anchor="start">- tipoCabello, beneficio</text>
+<text x="685" y="970" font-family="Arial,sans-serif" font-size="21" fill="#148184" font-weight="bold" text-anchor="start">+ mostrarBeneficio()</text>
+<text x="685" y="1035" font-family="Arial,sans-serif" font-size="19" fill="#596B79" font-weight="normal" text-anchor="start">override getCategoria()</text>
+<rect x="1255" y="810" width="490" height="300" rx="12" fill="#FFFFFF" stroke="#148184" stroke-width="3"/>
+<rect x="1255" y="810" width="490" height="54" rx="12" fill="#148184"/>
+<text x="1500" y="847" font-family="Arial,sans-serif" font-size="25" fill="#FFFFFF" font-weight="bold" text-anchor="middle">ProductoCorporal</text>
+<text x="1285" y="925" font-family="Arial,sans-serif" font-size="21" fill="#263746" font-weight="normal" text-anchor="start">- zonaAplicacion, beneficio</text>
+<text x="1285" y="970" font-family="Arial,sans-serif" font-size="21" fill="#148184" font-weight="bold" text-anchor="start">+ explicarUso()</text>
+<text x="1285" y="1035" font-family="Arial,sans-serif" font-size="19" fill="#596B79" font-weight="normal" text-anchor="start">override getCategoria()</text>
+<line x1="70" y1="1150" x2="140" y2="1150" stroke="#19314E" stroke-width="4" />
+<text x="155" y="1158" font-family="Arial,sans-serif" font-size="18" fill="#596B79" font-weight="normal" text-anchor="start">hereda (extends)</text>
+<line x1="370" y1="1150" x2="440" y2="1150" stroke="#148184" stroke-width="4" stroke-dasharray="10,8" />
+<text x="455" y="1158" font-family="Arial,sans-serif" font-size="18" fill="#596B79" font-weight="normal" text-anchor="start">implementa (implements)</text>
+</svg>

@@ -1,35 +1,48 @@
 package lucyday;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-/** Administra productos base y derivados mediante una colección polimórfica. */
+/** Administra productos usando su interfaz común, sin depender de una subclase concreta. */
 public class Inventario {
-    private final List<Producto> productos = new ArrayList<>();
+    private final List<ProductoInventariable> productos = new ArrayList<>();
 
-    public boolean agregarProducto(Producto producto) {
-        if (buscarPorCodigo(producto.getCodigo()) != null) return false;
+    public boolean agregarProducto(ProductoInventariable producto) {
+        if (producto == null || buscarPorCodigo(producto.getCodigo()) != null) return false;
         productos.add(producto);
         return true;
     }
 
-    public Producto buscarPorCodigo(String codigo) {
-        for (Producto producto : productos) {
+    public ProductoInventariable buscarPorCodigo(String codigo) {
+        for (ProductoInventariable producto : productos) {
             if (producto.getCodigo().equalsIgnoreCase(codigo)) return producto;
         }
         return null;
     }
 
+    /** Devuelve una vista de solo lectura para evitar cambios fuera de este inventario. */
+    public List<ProductoInventariable> getProductos() {
+        return Collections.unmodifiableList(productos);
+    }
+
+    /** La misma llamada de interfaz genera detalles distintos según cada objeto concreto. */
     public void listarProductos() {
-        if (productos.isEmpty()) { System.out.println("No hay productos registrados."); return; }
-        for (Producto producto : productos) System.out.println(producto); // Java usa el toString sobrescrito según el tipo real.
+        if (productos.isEmpty()) {
+            System.out.println("No hay productos registrados.");
+            return;
+        }
+        for (ProductoInventariable producto : productos) {
+            System.out.println(producto.generarDescripcion());
+        }
     }
 
     public void mostrarStockBajo() {
         boolean encontrado = false;
-        for (Producto producto : productos) {
+        for (ProductoInventariable producto : productos) {
             if (producto.necesitaReabastecimiento()) {
-                System.out.println("ALERTA: " + producto.getNombre() + " (existencia: " + producto.getExistencia() + ")");
+                System.out.println("ALERTA: " + producto.getNombre()
+                        + " (existencia: " + producto.getExistencia() + ")");
                 encontrado = true;
             }
         }
